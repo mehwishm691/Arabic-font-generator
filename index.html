@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  
+
+
+
+
+
+  <link rel="stylesheet" href="/style.css">
+  <title>Arabic Font Generator</title>
+</head>
+<body>
+  <h1>
+     Wellcom to  My Arabic Font Generator
+  </h1>
+  <div class="container">
+    <label for="fontSelector">Select Font:</label>
+    <select id="fontSelector" onchange="updateFont()">
+      <option value="Traditional Arabic">Traditional Arabic</option>
+      <option value="Microsoft Naskh">Microsoft Naskh</option>
+      <option value="Amiri">Amiri</option>
+      <option value="Lateef">Lateef</option>
+      <option value="Noto Naskh Arabic">Noto Naskh Arabic</option>
+      <option value="Tajawal">Tajawal</option>
+      <option value="Reem Kufi">Reem Kufi</option>
+      <option value="Traditional Arabic">Traditional Arabic</option>
+      <option value="Microsoft Naskh">Microsoft Naskh</option>
+      <option value="Amiri">Amiri</option>
+      <option value="Lateef">Lateef</option>
+      <option value="Noto Naskh Arabic">Noto Naskh Arabic</option>
+      <option value="Tajawal">Tajawal</option>
+      <option value="Reem Kufi">Reem Kufi</option>
+      <option value="Geeza Pro">Geeza Pro</option>
+      <option value="Sakkal Majalla">Sakkal Majalla</option>
+      <option value="Droid Arabic Naskh">Droid Arabic Naskh</option>
+      <option value="Simplified Arabic">Simplified Arabic</option>
+      <option value="DIN Next Arabic">DIN Next Arabic</option>
+      <option value="Fedra Arabic">Fedra Arabic</option>
+      <option value="Farsi Simple Bold">Farsi Simple Bold</option>
+      <option value="DecoType Thuluth">DecoType Thuluth</option>
+      <!-- Add more options as needed -->
+    </select>
+
+    <label for="fontSize">Font Size:</label>
+    <input type="number" id="fontSize" value="16" min="1" onchange="updateFont()">
+
+    <label for="textInput">Enter Text:</label>
+    <textarea id="textInput" oninput="updateText()">مرحبًا بك في مولد الخط العربي</textarea>
+
+    <div class="output" id="output">مرحبًا بك في مولد الخط العربي</div>
+  </div>
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+  <script src="/scrept.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    h1{
+font-size: 50px;
+font-weight: bolder;
+color: blue;
+
+    }
+
+    .keyboard {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap: 5px;
+      margin-top: 20px;
+    }
+
+    button {
+      width: 130px;
+      height: 40px;
+      font-size: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+    }
+  </style>
+  <title>Arabic Keyboard</title>
+</head>
+<body>
+  <h1>
+    Arabic Keyboard
+  </h1>
+  <div class="keyboard" id="arabicKeyboard">
+    <button onclick="appendToInput('ا')">ا</button>
+    <button onclick="appendToInput('ب')">ب</button>
+    <button onclick="appendToInput('ت')">ت</button>
+    <button onclick="appendToInput('ث')">ث</button>
+    <button onclick="appendToInput('ج')">ج</button>
+    <button onclick="appendToInput('ح')">ح</button>
+    <button onclick="appendToInput('خ')">خ</button>
+    <button onclick="appendToInput('د')">د</button>
+    <button onclick="appendToInput('ذ')">ذ</button>
+    <button onclick="appendToInput('ر')">ر</button>
+    
+    <!-- Add more buttons for other Arabic characters -->
+
+    <button onclick="appendToInput('س')">س</button>
+    <button onclick="appendToInput('ش')">ش</button>
+    <button onclick="appendToInput('ص')">ص</button>
+    <button onclick="appendToInput('ض')">ض</button>
+    <button onclick="appendToInput('ط')">ط</button>
+    <button onclick="appendToInput('ظ')">ظ</button>
+    <button onclick="appendToInput('ع')">ع</button>
+    <button onclick="appendToInput('غ')">غ</button>
+    <button onclick="appendToInput('ف')">ف</button>
+    <button onclick="appendToInput('ق')">ق</button>
+    
+    <button onclick="appendToInput('ك')">ك</button>
+    <button onclick="appendToInput('ل')">ل</button>
+    <button onclick="appendToInput('م')">م</button>
+    <button onclick="appendToInput('ن')">ن</button>
+    <button onclick="appendToInput('ه')">ه</button>
+    <button onclick="appendToInput('و')">و</button>
+    <button onclick="appendToInput('ي')">ي</button>
+    <button onclick="appendToInput('ء')">ء</button>
+    <button onclick="appendToInput('آ')">آ</button>
+    <button onclick="appendToInput('ؤ')">ؤ</button>
+
+    <button onclick="appendToInput('ئ')">ئ</button>
+    <button onclick="appendToInput('آ')">آ</button>
+    <button onclick="appendToInput('ئ')">ئ</button>
+    <button onclick="appendToInput('ء')">ء</button>
+    <button onclick="appendToInput('أ')">أ</button>
+    <button onclick="appendToInput('إ')">إ</button>
+    <button onclick="appendToInput('ٱ')">ٱ</button>
+    <button onclick="appendToInput('ة')">ة</button>
+    <button onclick="appendToInput('ى')">ى</button>
+    <button onclick="appendToInput('ً')">ً</button>
+
+    <!-- Numerals and Punctuation -->
+    <button onclick="appendToInput('1')">1</button>
+    <button onclick="appendToInput('2')">2</button>
+    <button onclick="appendToInput('3')">3</button>
+    <button onclick="appendToInput('4')">4</button>
+    <button onclick="appendToInput('5')">5</button>
+    <button onclick="appendToInput('6')">6</button>
+    <button onclick="appendToInput('7')">7</button>
+    <button onclick="appendToInput('8')">8</button>
+    <button onclick="appendToInput('9')">9</button>
+    <button onclick="appendToInput('0')">0</button>
+
+    <button onclick="appendToInput('.')">.</button>
+    <button onclick="appendToInput(',')">,</button>
+    <button onclick="appendToInput(':')">:</button>
+    <button onclick="appendToInput(';')">;</button>
+    <button onclick="appendToInput('?')">?</button>
+    <button onclick="appendToInput('!')">!</button>
+    <button onclick="appendToInput('(')">(</button>
+    <button onclick="appendToInput(')')">)</button>
+    <button onclick="appendToInput('-')">-</button>
+
+    <!-- Additional Special Characters -->
+    <button onclick="appendToInput('@')">@</button>
+    <button onclick="appendToInput('#')">#</button>
+    <button onclick="appendToInput('$')">$</button>
+    <button onclick="appendToInput('%')">%</button>
+    <button onclick="appendToInput('&')">&</button>
+    <button onclick="appendToInput('*')">*</button>
+    <button onclick="appendToInput('+')">+</button>
+    <button onclick="appendToInput('/')">/</button>
+    <button onclick="appendToInput('=')">=</button>
+    <button onclick="appendToInput('_')">_</button>
+
+    <!-- Special Function Buttons -->
+    <button onclick="clearInput()">Clear</button>
+    <button onclick="appendToInput(' ')">Space</button>
+    <button onclick="backspace()">Backspace</button>
+  </div>
+
+  <input type="text" id="textInput" readonly>
+
+  <script>
+    function appendToInput(char) {
+      document.getElementById('textInput').value += char;
+    }
+
+    function backspace() {
+      var currentText = document.getElementById('textInput').value;
+      document.getElementById('textInput').value = currentText.slice(0, -1);
+    }
+
+    function clearInput() {
+      document.getElementById('textInput').value = '';
+    }
+  </script>
+</body>
+</html>
